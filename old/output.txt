@@ -1,0 +1,17 @@
+set groups __contrail_ip_clos__ chassis aggregated-devices ethernet device-count 128
+set groups __contrail_ip_clos__ interfaces xe-0/0/0 description "Virtual Port Group : vpg-internal-0"
+set groups __contrail_ip_clos__ interfaces xe-0/0/0 gigether-options 802.3ad ae0
+set groups __contrail_ip_clos__ interfaces ae0 description "Virtual Port Group : vpg-internal-0"
+set groups __contrail_ip_clos__ interfaces ae0 aggregated-ether-options lacp active
+set groups __contrail_ip_clos__ interfaces ae0 aggregated-ether-options lacp periodic fast
+
+set groups __contrail_ip_clos__ interfaces ae0 description "Virtual Port Group : vpg-internal-0"
+set groups __contrail_ip_clos__ interfaces ae0 esi 00:d2:18:95:a8:ef:d0:97:98:00
+set groups __contrail_ip_clos__ interfaces ae0 esi all-active
+set groups __contrail_ip_clos__ chassis aggregated-devices ethernet device-count 128
+set groups __contrail_ip_clos__ interfaces ae0 aggregated-ether-options lacp active
+set groups __contrail_ip_clos__ interfaces ae0 aggregated-ether-options lacp system-id 00:89:79:0d:fe:8a
+set groups __contrail_ip_clos__ interfaces ae0 aggregated-ether-options lacp system-priority 100
+set groups __contrail_ip_clos__ interfaces ae0 aggregated-ether-options lacp admin-key 1
+set groups __contrail_ip_clos__ interfaces xe-0/0/0 description "Virtual Port Group : vpg-internal-0"
+set groups __contrail_ip_clos__ interfaces xe-0/0/0 gigether-options 802.3ad ae0

@@ -1,0 +1,210 @@
+{
+    "feature":"underlay_ip_clos",
+    "cfg_group":"__contrail_ip_clos__",
+    "device_abstract_config": {
+        "comment": "/* Contrail Generated Group Config */",
+        "vlans": [
+            {
+                "comment": "/* Virtual Network: vn4-test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push, UUID: 7595e973-0ffd-4782-9709-e283a34010cb, Encapsulation: VXLAN */",
+                "interfaces": [
+                    {
+                        "name": "ae0.100"
+                    }
+                ],
+                "description": "Virtual Network - vn4-test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push",
+                "name": "bd-2004",
+                "vxlan_id": 2004
+            }
+        ],
+        "features": {
+            "l2-gateway": {
+                "routing_instances": [
+                    {
+                        "export_targets": [
+                            "target:64512:8000004"
+                        ],
+                        "virtual_network_mode": "l2",
+                        "vxlan_id": "2004",
+                        "routing_instance_type": "virtual-switch",
+                        "virtual_network_id": "5",
+                        "is_public_network": false,
+                        "import_targets": [
+                            "target:64512:8000004"
+                        ],
+                        "name": "_contrail_vn4-test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push-l2-5"
+                    }
+                ],
+                "vlans": [
+                    {
+                        "comment": "/* Virtual Network: vn4-test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push, UUID: 7595e973-0ffd-4782-9709-e283a34010cb, Encapsulation: VXLAN */",
+                        "interfaces": [
+                            {
+                                "name": "ae0.100"
+                            }
+                        ],
+                        "description": "Virtual Network - vn4-test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push",
+                        "name": "bd-2004",
+                        "vxlan_id": 2004
+                    }
+                ],
+                "name": "l2-gateway",
+                "physical_interfaces": [
+                    {
+                        "name": "ae0",
+                        "logical_interfaces": [
+                            {
+                                "comment": "/* L2 EVPN Tagged Interface, Virtual Network: vn4-test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push, UUID: 7595e973-0ffd-4782-9709-e283a34010cb, VLAN Tag: 100 */",
+                                "vlan_tag": "100",
+                                "is_tagged": true,
+                                "name": "ae0.100",
+                                "unit": "100"
+                            }
+                        ],
+                        "link_aggregation_group": {
+                            "description": "Virtual Port Group : vpg-lag-1test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push"
+                        }
+                    }
+                ]
+            },
+            "virtual-port-group": {
+                "name": "virtual-port-group",
+                "physical_interfaces": [
+                    {
+                        "comment": "ae interface",
+                        "interface_type": "lag",
+                        "ethernet_segment_identifier": "00:d2:18:95:a8:ef:d0:97:98:00",
+                        "name": "ae0",
+                        "link_aggregation_group": {
+                            "lacp_enabled": true,
+                            "link_members": [
+                                "xe-0/0/0"
+                            ],
+                            "description": "Virtual Port Group : vpg-internal-0"
+                        }
+                    }
+                ]
+            },
+            "overlay-bgp": {
+                "bgp": [
+                    {
+                        "peers": [
+                            {
+                                "ip_address": "4.4.4.4",
+                                "autonomous_system": 64512
+                            }
+                        ],
+                        "families": [
+                            "route-target",
+                            "inet-vpn",
+                            "evpn",
+                            "inet6-vpn"
+                        ],
+                        "name": "_contrail_asn-64512",
+                        "hold_time": 0,
+                        "type_": "internal",
+                        "ip_address": "3.3.3.3",
+                        "autonomous_system": 64512
+                    }
+                ],
+                "tunnel_ip": "30.30.0.1",
+                "name": "overlay-bgp"
+            }
+        },
+        "system": {
+            "loopback_ip_list": [
+                "30.30.0.1"
+            ],
+            "tunnel_ip": "30.30.0.1",
+            "routing_bridging_roles": [
+                "crb-access"
+            ],
+            "name": "router1test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push",
+            "is_ucast_gateway_only": false,
+            "brownfield_global_asn": "",
+            "device_family": "junos-qfx",
+            "management_ip": "3.3.3.3",
+            "encapsulation_priorities": [
+                "VXLAN",
+                "MPLSoUDP"
+            ],
+            "credentials": {
+                "authentication_method": "PasswordBasedAuthentication",
+                "password": "blFbtqo52D4IUm/QtMGmvw==",
+                "user_name": "user"
+            },
+            "vendor_name": "juniper",
+            "product_name": "qfx5110",
+            "physical_role": "leaf",
+            "uuid": "116e294f-a5b2-4ce4-87ca-37d8128a3c40"
+        },
+        "bgp": [
+            {
+                "comment": "/* overlay_bgp: BGP Router: router1test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push, UUID: b7d5ed31-fe14-4920-bbdd-3badbb65baab */",
+                "peers": [
+                    {
+                        "comment": "/* overlay_bgp: BGP Router: router2test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push, UUID: 39d50698-bfac-4cbf-85b3-76f1b3615c01 */",
+                        "ip_address": "4.4.4.4",
+                        "name": "4.4.4.4",
+                        "autonomous_system": 64512
+                    }
+                ],
+                "families": [
+                    "route-target",
+                    "inet-vpn",
+                    "evpn",
+                    "inet6-vpn"
+                ],
+                "name": "_contrail_asn-64512",
+                "hold_time": 0,
+                "type_": "internal",
+                "ip_address": "3.3.3.3",
+                "autonomous_system": 64512
+            }
+        ],
+        "physical_interfaces": [
+            {
+                "comment": "ae interface",
+                "name": "ae0",
+                "interface_type": "lag",
+                "ethernet_segment_identifier": "00:f0:84:7b:cf:6a:49:e4:70:00",
+                "link_aggregation_group": {
+                    "lacp_enabled": true,
+                    "link_members": [
+                        "xe-0/0/0"
+                    ],
+                    "description": "Virtual Port Group : vpg-lag-1test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push"
+                },
+                "logical_interfaces": [
+                    {
+                        "comment": "/* L2 EVPN Tagged Interface, Virtual Network: vn4-test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push, UUID: 7595e973-0ffd-4782-9709-e283a34010cb, VLAN Tag: 100 */",
+                        "vlan_tag": "100",
+                        "is_tagged": true,
+                        "name": "ae0.100",
+                        "unit": "100"
+                    }
+                ]
+            }
+        ],
+        "routing_instances": [
+            {
+                "comment": "/* Private Virtual Network: vn4-test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push, UUID: 7595e973-0ffd-4782-9709-e283a34010cb, VRF Type: L2, Forwarding Mode: L2-L3 */",
+                "export_targets": [
+                    "target:64512:8000004"
+                ],
+                "virtual_network_mode": "l2-l3",
+                "vxlan_id": "2004",
+                "virtual_network_is_internal": false,
+                "routing_instance_type": "virtual-switch",
+                "virtual_network_id": "5",
+                "is_public_network": false,
+                "import_targets": [
+                    "target:64512:8000004"
+                ],
+                "name": "_contrail_vn4-test.test_virtual_port_group.TestAnsibleVirtualPortGroupDM.test_mh_config_push-l2-5"
+            }
+        ],
+        "evpn": {
+            "encapsulation": "vxlan"
+        }
+    }
+}
