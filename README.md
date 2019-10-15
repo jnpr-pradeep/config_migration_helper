@@ -6,4 +6,4 @@ Finally prints True if the configuration is same else False.
 <p style="text-decoration: underline;">Procedure </p>
 tox<br/>
 source .tox/py27/bin/activate<br/>
-python comparte_template_outputs.py
+python compare_template_outputs.py
